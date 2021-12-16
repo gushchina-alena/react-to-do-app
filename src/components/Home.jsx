@@ -15,6 +15,10 @@ const Home = () => {
         }
     }
 
+    const removeTask = (id) => {
+        setTasks([...tasks.filter((task) => task.id !== id)])
+    }
+
     return (
         <>
             <section className='todo-list'>
@@ -23,7 +27,7 @@ const Home = () => {
                 {tasks.map((task) => {
                     return (
                         <ToDo
-                        task={task}
+                            task={task}
                             key={task.id}
                             removeTask={removeTask}
                         />
