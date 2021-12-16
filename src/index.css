@@ -1,13 +1,122 @@
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  font-family: 'Sora', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background: rgb(131,58,180);
+  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(239,29,253,0.5133403703278187) 50%, rgba(252,176,69,1) 100%);
+}
+
+.todo-list{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  width: 520px;
+  min-height: 600px;
+  background: #FBEAFF;
+  text-align: center;
+  margin: 70px auto;
+  border-radius: 10px;
+  padding-bottom: 32px;
+}
+
+h1 {
+  margin: 32px 0;
+  color: #fff;
+  font-size: 24px;
+  font-family: 'Pacifico', cursive;
+  color: #845EC2;
+  font-size: 40px;
+}
+
+.todo-input {
+  padding: 16px 40px 16px 20px;
+  border-radius: 4px 0 0 4px;
+  border: 2px solid #845EC2;
+  outline: none;
+  width: 320px;
+  background: transparent;
+  color: #fff;
+  font-family: 'Pacifico', cursive;
+  color: #845EC2;
+  font-size: 24px;
+}
+
+.todo-input::placeholder {
+  color: #845EC2;
+  font-size: 24px;
+}
+
+.todo-button {
+  padding: 18px;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  outline: none;
+  background: #845EC2;
+  color: #fff;
+  font-family: 'Pacifico', cursive;
+  font-size: 24px;
+}
+
+.item-todo {
+  padding: 14px;
+  width: 400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  background: #845EC2;
+  color: #fff;
+  font-size: 26px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.item-text {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.item-delete {
+  display: inline-block;
+  cursor: pointer;
+  font-size: 22px;
+}
+
+.private-denied {
+  text-align: center;
+  font-size: 50px;
+  color: #F21010;
+  padding-top: 150px;
+}
+
+.private-success {
+  text-align: center;
+  font-size: 50px;
+  color: #109251;
+  padding-top: 150px;
+}
+
+.private-btn {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  background-color: #845EC2;
+  border-radius: 10px;
+  padding: 10px 56px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.private-btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
 }
