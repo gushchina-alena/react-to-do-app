@@ -1,5 +1,4 @@
-import style from '../assets/styles/LoginForm.css';
-import Private from './Private';
+import '../assets/styles/LoginForm.css';
 import React, { useState } from "react";
 import authUsers from '../API/auth-users';
 

@@ -1,5 +1,3 @@
-import React, { useState } from "react";
-import App from '../App'
 
 const Private = ({isAuth, changeIsAuth}) => {
     if (isAuth === false) {

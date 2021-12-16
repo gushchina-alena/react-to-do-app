@@ -1,6 +1,6 @@
 import logo from '../assets/images/to-do-list.png';
 import { Link } from "react-router-dom";
-import style from '../assets/styles/Navbar.css';
+import '../assets/styles/Navbar.css';
 
 const Navbar = () => {
     return (
