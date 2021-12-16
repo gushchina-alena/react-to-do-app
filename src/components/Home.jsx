@@ -10,14 +10,9 @@ const Home = () => {
             const newItem = {
                 id: userInput.id,
                 task: userInput,
-                complete: false
             }
             setTasks([...tasks, newItem])
         }
-    }
-
-    const removeTask = (id) => {
-        setTasks([...tasks.filter((task) => task.id !== id)])
     }
 
     return (
