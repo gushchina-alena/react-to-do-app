@@ -1,8 +1,9 @@
-import { useState } from 'react'
-import ToDo from './ToDo'
-import ToDoForm from './ToDoForm'
+import { useState } from 'react';
+import ToDo from '../components/ToDo';
+import ToDoForm from '../components/ToDoForm';
+import '../assets/styles/Tasks.css';
 
-const Home = () => {
+const Tasks = () => {
     const [tasks, setTasks] = useState([]);
 
     const addTask = (userInput) => {
@@ -38,4 +39,4 @@ const Home = () => {
     );
 };
 
-export default Home; 
+export default Tasks; 

@@ -1,10 +1,12 @@
-import Home from './components/Home'
+import Tasks from './pages/Tasks'
 import Navbar from './components/Navbar'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import LoginForm from './components/LoginForm';
+import LoginForm from './pages/LoginForm';
 import Private from './components/Private';
 import React, { useState } from "react";
 import Footer from './components/Footer';
+import Notes from './pages/Notes';
+import About from './pages/About';
 
 function App() {
   const [isAuth, setIsAuth] = useState(false);
@@ -15,15 +17,17 @@ function App() {
 
   return (
     <Router>
-      <>
         <div className='content-container'>
           <Navbar />
             <Switch>
               <Route exact path='/'>
-                <Home />
+                <About />
               </Route>
-              <Route path='/private'>
-                <Private isAuth={isAuth} changeIsAuth={changeIsAuth} />
+              <Route path='/tasks'>
+                <Tasks />
+              </Route>
+              <Route path='/notes'>
+                <Notes />
               </Route>
               <Route path='/login'>
                 <LoginForm isAuth={isAuth} changeIsAuth={changeIsAuth} />
@@ -31,7 +35,6 @@ function App() {
             </Switch>
             <Footer />
           </div>
-      </>
     </Router>
   );
 }

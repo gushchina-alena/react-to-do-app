@@ -12,10 +12,13 @@ const Navbar = () => {
                 <Link className="head-title" to="/">To Do App</Link>
                 </li>
                 <li className="header__nav__link">
-                    <Link className="header__nav__link" to="/">Home</Link>
+                    <Link className="header__nav__link" to="/">About</Link>
                 </li>
                 <li className="header__nav__link">
-                    <Link className="header__nav__link" to="/private">Create</Link>
+                    <Link className="header__nav__link" to="/tasks">Tasks</Link>
+                </li>
+                <li className="header__nav__link">
+                    <Link className="header__nav__link" to="/notes">Notes</Link>
                 </li>
                 <li className="header__nav__link">
                     <Link className="header__nav__link" to="/login">Sign In</Link>
