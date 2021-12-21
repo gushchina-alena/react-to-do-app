@@ -10,7 +10,7 @@ const Footer = () => {
         <>
             <footer>
                 <p className='footer__heading'>Contacts</p> 
-                <div footer__icons>
+                <div className='footer__icons'>
                     <a href={telegramLink}><img className='footer__icon' src={TelegramIcon} alt="" /></a>
                     <a href={githubLink}><img className='footer__icon' src={GithubIcon} alt="" /></a>
                 </div>

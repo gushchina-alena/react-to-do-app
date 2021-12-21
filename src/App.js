@@ -2,7 +2,6 @@ import Tasks from './pages/Tasks'
 import Navbar from './components/Navbar'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import LoginForm from './pages/LoginForm';
-import Private from './components/Private';
 import React, { useState } from "react";
 import Footer from './components/Footer';
 import Notes from './pages/Notes';
