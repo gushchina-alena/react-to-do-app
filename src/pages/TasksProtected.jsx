@@ -2,7 +2,6 @@ import { useState } from 'react';
 import TaskList from '../components/TaskList';
 import TaskForm from '../components/TaskForm';
 import '../assets/styles/Tasks.css';
-import LoginForm from './LoginForm';
 
 const TasksProtected = () => {
     const [tasks, setTasks] = useState([]);

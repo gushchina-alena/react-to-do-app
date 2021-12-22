@@ -1,6 +1,6 @@
 import '../assets/styles/LoginForm.css';
 import React, { useState } from "react";
-import authUsers from '../API/auth-users';
+// import authUsers from '../API/auth-users';
 
 const LoginForm = () => {
     const [email, setEmail] = useState('');
@@ -12,37 +12,35 @@ const LoginForm = () => {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        const isValid = formValidation();
-        if(isValid) {
+        formValidation();
+        // if(isValid) {
             
-        }
+        // }
     }
 
 const formValidation = () => {
     const emailErr = {};
     const passwordErr = {};
-    let isValid = true; 
+    // let isValid = true; 
     const emailFormat = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
     if (email.trim() === '') {
         emailErr.emptyEmail = 'Email is empty';
-        isValid = false; 
+        // isValid = false; 
     } else if (email.trim().match(emailFormat)) {
-        isValid = true;
+        // isValid = true;
     } else {
         emailErr.incorrectEmail = 'Incorrect format'
-        isValid = false;
+        // isValid = false;
     }
 
     if(password.trim() === '') {
         passwordErr.passwordEmpty = 'Password is empty';
-        isValid = false;
+        // isValid = false;
     } else if (password.length <= 7) {
         passwordErr.passwordShort = 'Password should contain at least 8 characters';
-        isValid = false;
-    } else {
-        isValid = true;
-    }
+        // isValid = false;
+    } 
 
     setEmailErr(emailErr);
     setPasswordErr(passwordErr);
