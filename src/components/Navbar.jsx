@@ -17,12 +17,12 @@ const Navbar = () => {
                 <li className="header__nav__link">
                     <Link className="header__nav__link" to="/start">Start</Link>
                 </li>
-                {/* <li className="header__nav__link">
-                    <Link className="header__nav__link" to="/protected">Tasks</Link>
-                </li> */}
                 <li className="header__nav__link">
-                    <Link className="header__nav__link" to="/login">Sign In</Link>
+                    <Link className="header__nav__link" to="/login">Tasks</Link>
                 </li>
+                {/* <li className="header__nav__link">
+                    <Link className="header__nav__link" to="/login">Sign In</Link>
+                </li> */}
             </nav>
         </header>
         </>

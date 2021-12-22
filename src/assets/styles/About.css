@@ -1,7 +1,7 @@
 .about {
     background-color: #ffffff;
     border-top: 1px solid #afafaf;
-    height: 100vh;
+    height: 90vh;
 }
 
 .about__flex-container {
@@ -12,8 +12,8 @@
 }
 
 .about img {
-    width: 450px;
-    padding: 20px;
+    height: 630px;
+    margin-top: 25px;
 }
 
 .about__text {

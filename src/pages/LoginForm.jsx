@@ -1,17 +1,25 @@
 import '../assets/styles/LoginForm.css';
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 // import authUsers from '../API/auth-users';
 import { useHistory } from "react-router-dom";
+import { UserContext  } from '../UserContext';
+import userData from '../data/auth-users';
 
 
-const LoginForm = ( { isAuth, setIsAuth }) => {
+const LoginForm = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
     const [emailErr, setEmailErr] = useState({});
     const [passwordErr, setPasswordErr] = useState({});
 
+    const { setisAuth } = useContext(UserContext);
+
     let history = useHistory();
+
+
+    // if (isAuth) {
+    //     history.push("/protected");
+    // }
 
     const onSubmit = (e) => {
         e.preventDefault();
@@ -19,28 +27,32 @@ const LoginForm = ( { isAuth, setIsAuth }) => {
     }
 
 
-
 const formValidation = () => {
     const emailErr = {};
     const passwordErr = {};
-    const emailFormat = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const emailIsCorrect = userData.find(user => user.email === email);
+    const passwordIsCorrect = userData.find(user => user.password === password);
 
     if (email.trim() === '') {
         emailErr.emptyEmail = 'Email is empty';
-        // isValid = false; 
-    } else if (email.trim().match(emailFormat)) {
+        
+    } else if (emailIsCorrect) {
+        localStorage.setItem('isAuth', 'true');
+        setisAuth(true);
         history.push("/protected");
         
     } else {
-        emailErr.incorrectEmail = 'Incorrect format'
+        emailErr.incorrectEmail = 'Incorrect email';
     }
 
     if(password.trim() === '') {
         passwordErr.passwordEmpty = 'Password is empty';
-    } else if (password.length <= 7) {
-        passwordErr.passwordShort = 'Password should contain at least 8 characters';
-    } else {
+    } else if (passwordIsCorrect) {
+        localStorage.setItem('isAuth', 'true');
+        setisAuth(true);
         history.push("/protected");
+    } else {
+        passwordErr.incorrectPassword = 'Incorrect password';
     }
 
     setEmailErr(emailErr);
