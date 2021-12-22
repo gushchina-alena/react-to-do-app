@@ -10,7 +10,7 @@ const TasksGuest= () => {
                 </div>
                 <div className='tasks-guest__text'>
                     <h1>Sign in to add your first task</h1>
-                    <button className='button'>Sign In</button>
+                    <button className='tasks-guest__button button'>Sign In</button>
                 </div>
             </div>
         </div>

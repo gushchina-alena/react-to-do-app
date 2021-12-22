@@ -24,3 +24,9 @@
     font-size: 50px;
     font-weight: 700;
 }
+
+.tasks-guest__button {
+    margin-left: 68px;
+    color: #1E1B23;
+    background-color: #FBEAFF;
+}
