@@ -2,40 +2,83 @@ import '../assets/styles/LoginForm.css';
 import React, { useState } from "react";
 import authUsers from '../API/auth-users';
 
-
-const LoginForm = ({isAuth, setIsAuth, changeIsAuth}) => {
+const LoginForm = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    function submitForm(e) {
+    const [emailErr, setEmailErr] = useState({});
+    const [passwordErr, setPasswordErr] = useState({});
+
+
+    const onSubmit = (e) => {
         e.preventDefault();
-        if (authUsers[0].email === email && authUsers[0].password) {
-            return alert('Success!');
-        } else {
-            return alert('No such user!');
+        const isValid = formValidation();
+        if(isValid) {
+            
         }
     }
 
+const formValidation = () => {
+    const emailErr = {};
+    const passwordErr = {};
+    let isValid = true; 
+    const emailFormat = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    if (email.trim() === '') {
+        emailErr.emptyEmail = 'Email is empty';
+        isValid = false; 
+    } else if (email.trim().match(emailFormat)) {
+        isValid = true;
+    } else {
+        emailErr.incorrectEmail = 'Incorrect format'
+        isValid = false;
+    }
+
+    if(password.trim() === '') {
+        passwordErr.passwordEmpty = 'Password is empty';
+        isValid = false;
+    } else if (password.length <= 7) {
+        passwordErr.passwordShort = 'Password should contain at least 8 characters';
+        isValid = false;
+    } else {
+        isValid = true;
+    }
+
+    setEmailErr(emailErr);
+    setPasswordErr(passwordErr);
+}
+
+
     return (
         <div className="form-container">
-            <form className="form" onSubmit={submitForm}>
+            <form className="form">
                 <h1 className="form__title">Sign In</h1>
                 <div className="form__input-block input-block">
-                    <label className="input-block__label email" htmlFor="email">Email</label>
-                    <input value={email} onChange={(e) => setEmail(e.target.value)} className="input-block__item" type="text" id="email" name="email"
-                        placeholder="Enter the email" />
-                    <div className="emailError"></div>
+                    <label className="input-block__label email">Email</label>
+                    <input 
+                    value={email} 
+                    onChange={(e) => setEmail(e.target.value)} 
+                    className="input-block__item" 
+                    placeholder="Enter the email" />
+                    {Object.keys(emailErr).map((key) => {
+                    return <div style={{color: 'red'}}>{emailErr[key]}</div>
+                })}
                 </div>
+
                 <div className="form__input-block input-block">
-                    <label className="input-block__label" htmlFor="password">Password</label>
-                    <input value={password} onChange={(e) => setPassword(e.target.value)} className="input-block__item" type="password" name="password" id="password"
-                        placeholder="Enter the password" />
-                    <div className="passwordError"></div>
+                    <label className="input-block__label">Password</label>
+                    <input value={password} 
+                    onChange={(e) => setPassword(e.target.value)} 
+                    className="input-block__item" 
+                    placeholder="Enter the password" />
+                    {Object.keys(passwordErr).map((key) => {
+                    return <div style={{color: 'red'}}>{passwordErr[key]}</div>
+                })}
                 </div>
-                <button className="form__button button" type="submit" onClick={submitForm}>Sign In</button>
+                <button className="button" type="submit" onClick={onSubmit}>Sign In</button>
             </form>
         </div>
     )
 }
 
-export default LoginForm
+export default LoginForm;

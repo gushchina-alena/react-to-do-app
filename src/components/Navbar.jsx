@@ -18,11 +18,12 @@ const Navbar = () => {
                     <Link className="header__nav__link" to="/tasks">Tasks</Link>
                 </li>
                 <li className="header__nav__link">
-                    <Link className="header__nav__link" to="/notes">Notes</Link>
+                    <Link className="header__nav__link" to="/add">Protected</Link>
                 </li>
                 <li className="header__nav__link">
                     <Link className="header__nav__link" to="/login">Sign In</Link>
                 </li>
+
             </nav>
         </header>
         </>

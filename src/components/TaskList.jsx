@@ -1,4 +1,4 @@
-function ToDo({ task, removeTask }) {
+function TaskList({ task, removeTask }) {
     return (
         <div key={task.id} className="item-todo">
             <div>
@@ -11,4 +11,4 @@ function ToDo({ task, removeTask }) {
     )
 }
 
-export default ToDo
+export default TaskList; 

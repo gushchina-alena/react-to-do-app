@@ -20,21 +20,7 @@ body {
   align-items: center;
 }
 
-.private-denied {
-  text-align: center;
-  font-size: 50px;
-  color: #F21010;
-  padding-top: 150px;
-}
-
-.private-success {
-  text-align: center;
-  font-size: 50px;
-  color: #109251;
-  padding-top: 150px;
-}
-
-.private-btn {
+.button {
   color: #fff;
   font-size: 24px;
   font-weight: 700;
@@ -42,17 +28,5 @@ body {
   border-radius: 10px;
   padding: 10px 56px;
   cursor: pointer;
-  text-align: center;
 }
 
-.private-btn-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 30px;
-  flex-grow: 1;
-}
-
-.private-btn {
-  margin-bottom: 230px;
-}

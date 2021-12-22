@@ -1,7 +1,7 @@
 const authUsers = [
     {
-        email: '1',
-        password: '2'
+        email: 'g@yandex.ru',
+        password: '1234567'
     }
 ]
 
