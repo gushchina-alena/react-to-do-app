@@ -1,11 +1,19 @@
-// import tasks from '../assets/images/signin.jfif';
+import tasks from '../assets/images/tasks.jpg';
+import '../assets/styles/TasksGuest.css';
 
 const TasksGuest= () => {
     return (
-        <>
-        <h3>Please sign in to add your first task</h3>
-        <button className='button'>Sign In</button>
-        </>
+        <div className='tasks'>
+            <div className='tasks-guest'>
+                <div className='tasks-guest__img'>
+                    <img src={tasks} alt='To do list'></img>
+                </div>
+                <div className='tasks-guest__text'>
+                    <h1>Sign in to add your first task</h1>
+                    <button className='button'>Sign In</button>
+                </div>
+            </div>
+        </div>
     );
 }
 
