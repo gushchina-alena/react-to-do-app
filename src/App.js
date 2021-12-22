@@ -1,5 +1,5 @@
-import Tasks from './pages/Tasks'
 import Navbar from './components/Navbar'
+import TasksGuest from './pages/TasksGuest';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import LoginForm from './pages/LoginForm';
 import {useState} from "react";
@@ -17,7 +17,7 @@ function App() {
             <Navbar />
               <Switch>
                 <Route exact path='/' component={About}></Route>
-                    <Route path='/tasks' component={Tasks}></Route>
+                    <Route path='/tasks' component={TasksGuest}></Route>
                 <Route path='/add' component={TasksProtected}></Route>
                 <Route path='/login' component={LoginForm} isAuth={isAuth} setIsAuth={setIsAuth}></Route>
               </Switch>

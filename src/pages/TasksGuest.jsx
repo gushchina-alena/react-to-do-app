@@ -1,6 +1,6 @@
+import tasks from '../assets/images/signin.jfif';
 
-
-const Tasks= () => {
+const TasksGuest= () => {
     return (
         <>
         <h3>Please sign in to add your first task</h3>
@@ -9,4 +9,4 @@ const Tasks= () => {
     );
 }
 
-export default Tasks; 
+export default TasksGuest; 
