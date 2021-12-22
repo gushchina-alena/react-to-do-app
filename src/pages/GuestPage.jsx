@@ -1,7 +1,7 @@
 import tasks from '../assets/images/tasks.jpg';
-import '../assets/styles/TasksGuest.css';
+import '../assets/styles/GuestPage.css';
 
-const TasksGuest= () => {
+const GuestPage= () => {
     return (
         <div className='tasks'>
             <div className='tasks-guest'>
@@ -17,4 +17,4 @@ const TasksGuest= () => {
     );
 }
 
-export default TasksGuest; 
+export default GuestPage; 
