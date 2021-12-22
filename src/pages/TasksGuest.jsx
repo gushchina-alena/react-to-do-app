@@ -9,8 +9,8 @@ const TasksGuest= () => {
                     <img src={tasks} alt='To do list'></img>
                 </div>
                 <div className='tasks-guest__text'>
-                    <h1>Sign in to add your first task</h1>
-                    <button className='tasks-guest__button button'>Sign In</button>
+                    <h1>Let's get started by creating the first task</h1>
+                    <button className='tasks-guest__button button'>Proceed</button>
                 </div>
             </div>
         </div>
