@@ -1,10 +1,11 @@
-function TaskList({ task, removeTask }) {
+function TaskList({ task, deleteTask, isDone }) {
     return (
         <div key={task.id} className="item-todo">
-            <div>
+            <div className={task.done ? 'line-through item-text' : 'item-text'}
+            onClick={(e) => isDone(task.id)}>
                 {task.task}
             </div>
-            <div className="item-delete" onClick={() => removeTask(task.id)}>
+            <div className="item-delete" onClick={() => deleteTask(task.id)}>
                 X
             </div>
         </div>

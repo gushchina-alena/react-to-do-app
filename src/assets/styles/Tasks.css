@@ -56,3 +56,10 @@ h1 {
     cursor: pointer;
 }
 
+.line-through {
+    text-decoration: line-through;
+}
+
+.item-text {
+    cursor: pointer;
+}
