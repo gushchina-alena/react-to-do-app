@@ -11,16 +11,16 @@ import { UserContext  } from './UserContext';
 
 function App() {
 
-  const [isAuth, setisAuth] = useState(false);
+  const [isAuth, setIsAuth] = useState(false);
 
-  useEffect(() => {
-    if (localStorage.getItem('isAuth')) {
-      setisAuth(true);
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (localStorage.getItem('isAuth')) {
+  //     setisAuth(true);
+  //   }
+  // }, []);
 
   return (
-    <UserContext.Provider value={{ isAuth, setisAuth }}>
+    <UserContext.Provider value={{ isAuth, setIsAuth }}>
       <Router>
           <div className='content-container'>
             <Navbar />

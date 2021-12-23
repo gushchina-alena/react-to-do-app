@@ -1,8 +1,26 @@
 import logo from '../assets/images/to-do-list.png';
 import { Link } from "react-router-dom";
 import '../assets/styles/Navbar.css';
+import {useContext} from "react";
+import {UserContext} from "../UserContext";
+import { useHistory } from "react-router-dom";
+
 
 const Navbar = () => {
+
+    const {isAuth, setIsAuth} = useContext(UserContext);
+    const history = useHistory();
+
+    const signinSignout = () => {
+        if (isAuth) {
+            localStorage.removeItem('isAuth');
+            setIsAuth(false);
+            history.push('/start')
+        } else {
+            history.push('/login')
+        }
+    }
+
     return (
         <>
         <header className='header'>
@@ -20,9 +38,7 @@ const Navbar = () => {
                 <li className="header__nav__link">
                     <Link className="header__nav__link" to="/login">Tasks</Link>
                 </li>
-                {/* <li className="header__nav__link">
-                    <Link className="header__nav__link" to="/login">Sign In</Link>
-                </li> */}
+                <button className='button' onClick={signinSignout}>{isAuth ? 'Sign Out' : 'Sign In'}</button>
             </nav>
         </header>
         </>

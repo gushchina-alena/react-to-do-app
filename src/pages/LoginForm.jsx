@@ -12,20 +12,15 @@ const LoginForm = () => {
     const [emailErr, setEmailErr] = useState({});
     const [passwordErr, setPasswordErr] = useState({});
 
-    const { setisAuth } = useContext(UserContext);
+    const {isAuth, setIsAuth} = useContext(UserContext);
 
     let history = useHistory();
 
-
-    // if (isAuth) {
-    //     history.push("/protected");
-    // }
 
     const onSubmit = (e) => {
         e.preventDefault();
         formValidation();
     }
-
 
 const formValidation = () => {
     const emailErr = {};
@@ -37,9 +32,9 @@ const formValidation = () => {
         emailErr.emptyEmail = 'Email is empty';
         
     } else if (emailIsCorrect) {
-        localStorage.setItem('isAuth', 'true');
-        setisAuth(true);
+        setIsAuth(true);
         history.push("/protected");
+
         
     } else {
         emailErr.incorrectEmail = 'Incorrect email';
@@ -48,9 +43,10 @@ const formValidation = () => {
     if(password.trim() === '') {
         passwordErr.passwordEmpty = 'Password is empty';
     } else if (passwordIsCorrect) {
-        localStorage.setItem('isAuth', 'true');
-        setisAuth(true);
+        setIsAuth(true);
         history.push("/protected");
+
+
     } else {
         passwordErr.incorrectPassword = 'Incorrect password';
     }
@@ -62,7 +58,7 @@ const formValidation = () => {
 
     return (
         <div className="form-container">
-            <form className="form">
+            <form className="form" onSubmit={onSubmit}>
                 <h1 className="form__title">Sign In</h1>
                 <div className="form__input-block input-block">
                     <label className="input-block__label email">Email</label>
@@ -81,12 +77,13 @@ const formValidation = () => {
                     <input value={password} 
                     onChange={(e) => setPassword(e.target.value)} 
                     className="input-block__item" 
+                    type="password"
                     placeholder="Enter the password" />
                     {Object.keys(passwordErr).map((key) => {
                     return <div style={{color: 'red'}}>{passwordErr[key]}</div>
                 })}
                 </div>
-                <button className="button" type="submit" onClick={onSubmit}>Sign In</button>
+                <button className="button" type="submit">Sign In</button>
             </form>
         </div>
     )
