@@ -2,7 +2,7 @@ import Navbar from './components/Navbar'
 import GuestPage from './pages/GuestPage';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import LoginForm from './pages/LoginForm';
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Footer from './components/Footer';
 import About from './pages/About';
 import TasksProtected from './pages/TasksProtected';
@@ -12,12 +12,6 @@ import { UserContext  } from './UserContext';
 function App() {
 
   const [isAuth, setIsAuth] = useState(false);
-
-  // useEffect(() => {
-  //   if (localStorage.getItem('isAuth')) {
-  //     setisAuth(true);
-  //   }
-  // }, []);
 
   return (
     <UserContext.Provider value={{ isAuth, setIsAuth }}>

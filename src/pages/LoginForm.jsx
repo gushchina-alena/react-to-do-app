@@ -12,7 +12,7 @@ const LoginForm = () => {
     const [emailErr, setEmailErr] = useState({});
     const [passwordErr, setPasswordErr] = useState({});
 
-    const {isAuth, setIsAuth} = useContext(UserContext);
+    const {setIsAuth} = useContext(UserContext);
 
     let history = useHistory();
 
