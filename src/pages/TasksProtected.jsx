@@ -1,40 +1,24 @@
-import { useState } from 'react';
-import TaskList from '../components/TaskList';
-import TaskForm from '../components/TaskForm';
+import { useContext } from 'react';
+import { UserContext  } from '../UserContext';
 import '../assets/styles/TasksProtected.css';
+import ToDoList from '../components/ToDoList';
 
 const TasksProtected = () => {
-    const [tasks, setTasks] = useState([]);
-
-    const addTask = (userInput) => {
-        if (userInput) {
-            const newItem = {
-                id: userInput.id,
-                task: userInput,
-            }
-            setTasks([...tasks, newItem])
-        }
-    }
-
-    const removeTask = (id) => {
-        setTasks([...tasks.filter((task) => task.id !== id)])
-    }
+    const { isAuth } = useContext(UserContext);
 
     return (
         <>
-            <section className='todo-list'>
-                <h1>Tasks to complete ({tasks.length})</h1>
-                <TaskForm addTask={addTask} />
-                {tasks.map((task) => {
-                    return (
-                        <TaskList
-                            task={task}
-                            key={task.id}
-                            removeTask={removeTask}
-                        />
-                    )
-                })}
-            </section>
+                { isAuth ? (
+                    <ToDoList />
+            )
+            : 
+            (<div className='restricted'>
+                <h1 className='restricted__message'>
+            To view this page, you have to log in.</h1>
+            </div>
+            )
+            }
+            
         </>
     );
 };

@@ -20,7 +20,7 @@ function App() {
             <Navbar />
               <Switch>
                 <Route exact path='/' component={About}></Route>
-                    <Route path='/start' component={GuestPage}></Route>
+                <Route path='/start' component={GuestPage}></Route>
                 <Route path='/protected' component={TasksProtected}></Route>
                 <Route path='/login'>
                   <LoginForm />

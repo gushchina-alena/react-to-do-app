@@ -1,12 +1,12 @@
 const authUsers = [
     {
-        email: 'alena@yandex.ru',
-        password: '12345678'
+        email: 'admin',
+        password: 'admin'
     },
 
     {
-        email: 'todo@mail.ru',
-        password: 'abcdefgh'
+        email: 'alena',
+        password: 'alena'
     }
 ]
 
