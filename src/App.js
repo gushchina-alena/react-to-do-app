@@ -1,16 +1,14 @@
-import Navbar from './components/Navbar'
-import GuestPage from './pages/GuestPage';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import LoginForm from './pages/LoginForm';
 import { useState } from "react";
+import { UserContext  } from './UserContext';
+import SignIn from './pages/SignIn';
+import Tasks from './pages/Tasks';
 import Footer from './components/Footer';
 import About from './pages/About';
-import TasksProtected from './pages/TasksProtected';
-import { UserContext  } from './UserContext';
-
+import Navbar from './components/Navbar'
+import Start from './pages/Start';
 
 function App() {
-
   const [isAuth, setIsAuth] = useState(false);
 
   return (
@@ -20,11 +18,9 @@ function App() {
             <Navbar />
               <Switch>
                 <Route exact path='/' component={About}></Route>
-                <Route path='/start' component={GuestPage}></Route>
-                <Route path='/protected' component={TasksProtected}></Route>
-                <Route path='/login'>
-                  <LoginForm />
-                </Route>
+                <Route path='/start' component={Start}></Route>
+                <Route path='/protected' component={Tasks}></Route>
+                <Route path='/login' component={SignIn}></Route>
               </Switch>
               <Footer />
             </div>

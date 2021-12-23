@@ -10,7 +10,7 @@ const About = () => {
                     <p>Lorem ipsum dolozr sit amet consectetur adipisicing elit. Perferendis autem animi ipsa velit maxime impedit minus aliquid, neque tempora laudantium odit ipsum ad, quo repudiandae vitae iusto in temporibus ex at modi ipsam, architecto unde error.</p>
                 </section>
                 <section className="about__img">
-                    <img src={planning} alt="" />
+                    <img src={planning} alt="To do list" />
                 </section>
             </div>
         </div>

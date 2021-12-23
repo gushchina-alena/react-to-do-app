@@ -1,12 +1,12 @@
-import tasks from '../assets/images/tasks.jpg';
-import '../assets/styles/GuestPage.css';
 import { useHistory } from "react-router-dom";
+import tasks from '../assets/images/tasks.jpg';
+import '../assets/styles/Start.css';
 
-const GuestPage= () => {
-    let guestHistory = useHistory();
+const Start= () => {
+    const history = useHistory();
 
     function onProceed () {
-        guestHistory.push("/login");
+        history.push("/login");
     }
 
     return (
@@ -24,4 +24,4 @@ const GuestPage= () => {
     );
 }
 
-export default GuestPage; 
+export default Start; 

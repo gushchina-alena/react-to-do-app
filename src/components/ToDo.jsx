@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import TaskList from './TaskList';
 import TaskForm from './TaskForm';
-import '../assets/styles/TasksProtected.css';
+import '../assets/styles/Tasks.css';
 
-const ToDoList = () => {
+const ToDo = () => {
     const [tasks, setTasks] = useState([]);
-    
+
     const addTask = (userInput) => {
         if (userInput) {
             const newItem = {
@@ -23,20 +23,20 @@ const ToDoList = () => {
     return (
         <>
             <section className='todo-list'>
-            <h1>Tasks to complete ({tasks.length})</h1>
-            <TaskForm addTask={addTask} />
-        {tasks.map((task) => {
-            return (
-                <TaskList
-                    task={task}
-                    key={task.id}
-                    removeTask={removeTask}
-                />
-            )
-        })}
-        </section>
+                <h1>Tasks to complete ({tasks.length})</h1>
+                <TaskForm addTask={addTask} />
+                {tasks.map((task) => {
+                    return (
+                        <TaskList
+                            task={task}
+                            key={task.id}
+                            removeTask={removeTask}
+                        />
+                    )
+                })}
+            </section>
         </>
     )
 }
 
-export default ToDoList;
+export default ToDo;
