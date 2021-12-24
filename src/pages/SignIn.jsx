@@ -7,52 +7,53 @@ import '../assets/styles/SignIn.css';
 const SignIn = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [emailErr, setEmailErr] = useState({});
-    const [passwordErr, setPasswordErr] = useState({});
+    const [emailErr, setEmailErr] = useState();
+    const [passwordErr, setPasswordErr] = useState();
 
     const { setIsAuth } = useContext(UserContext);
     const history = useHistory();
 
+    const emailIsCorrect = userData.find(user => user.email === email);
+    const passwordIsCorrect = userData.find(user => user.password === password);
+
+    function validateEmail() {
+        if (email.trim() === '') {
+            setEmailErr('Email is empty');
+            return false;
+        } else if (emailIsCorrect) {
+            setEmailErr('');
+            return true;
+        } else {
+            setEmailErr('Incorrect email');
+            return false;
+        }    
+    }
+
+    function validatePassword() {
+        if (password.trim() === '') {
+            setPasswordErr('Password is empty');
+            return false;
+        } else if (passwordIsCorrect) {
+            setPasswordErr('');
+            return true;
+        } else {
+            setPasswordErr('Incorrect password');
+            return false;
+        }
+    }
 
     const onSubmit = (e) => {
         e.preventDefault();
-        formValidation();
-    }
-
-    const formValidation = () => {
-        const emailErr = {};
-        const passwordErr = {};
-        const emailIsCorrect = userData.find(user => user.email === email);
-        const passwordIsCorrect = userData.find(user => user.password === password);
-
-        if (email.trim() === '') {
-            emailErr.emptyEmail = 'Email is empty';
-
-        } else if (emailIsCorrect) {
-            setIsAuth(true);
-            history.push("/protected");
-
-
-        } else {
-            emailErr.incorrectEmail = 'Incorrect email';
-        }
-
-        if (password.trim() === '') {
-            passwordErr.passwordEmpty = 'Password is empty';
-        } else if (passwordIsCorrect) {
-            setIsAuth(true);
-            history.push("/protected");
-
-
-        } else {
-            passwordErr.incorrectPassword = 'Incorrect password';
-        }
-
-        setEmailErr(emailErr);
-        setPasswordErr(passwordErr);
+        validateEmail();
+        validatePassword();
+            if (emailIsCorrect && passwordIsCorrect) {
+                setIsAuth(true);
+                history.push("/protected");
+            }
     }
 
 
+    
     return (
         <div className="form-container">
             <form className="form" onSubmit={onSubmit}>
@@ -64,9 +65,8 @@ const SignIn = () => {
                         onChange={(e) => setEmail(e.target.value)}
                         className="input-block__item"
                         placeholder="Enter the email" />
-                    {Object.keys(emailErr).map((key) => {
-                        return <div style={{ color: 'red' }}>{emailErr[key]}</div>
-                    })}
+                        {emailErr && <div style={{color: 'red'}}>{emailErr}</div>}
+                    
                 </div>
 
                 <div className="form__input-block input-block">
@@ -76,9 +76,7 @@ const SignIn = () => {
                         className="input-block__item"
                         type="password"
                         placeholder="Enter the password" />
-                    {Object.keys(passwordErr).map((key) => {
-                        return <div style={{ color: 'red' }}>{passwordErr[key]}</div>
-                    })}
+                    {passwordErr && <div style={{color: 'red'}}>{passwordErr}</div>}
                 </div>
                 <button className="button" type="submit">Sign In</button>
             </form>
