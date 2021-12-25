@@ -46,7 +46,7 @@ const SignIn = () => {
         e.preventDefault();
         validateEmail();
         validatePassword();
-            if (emailIsCorrect && passwordIsCorrect) {
+            if (passwordIsCorrect && emailIsCorrect) {
                 setIsAuth(true);
                 history.push("/protected");
             }
