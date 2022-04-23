@@ -7,11 +7,6 @@
   font-family: 'Quicksand';
 }
 
-body {
-  background: rgb(131,58,180);
-  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(239,29,253,0.5133403703278187) 50%, rgba(252,176,69,1) 100%);
-} 
-
 .content-container {
   min-height: 100vh;
   display: flex;
@@ -28,5 +23,11 @@ body {
   border-radius: 10px;
   padding: 10px 56px;
   cursor: pointer;
+}
+
+@media all and (max-width: 700px) {
+  .button {
+    padding: 10px 30px;
+  }
 }
 

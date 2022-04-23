@@ -1,6 +1,6 @@
 footer {
     width: 100%;
-    height: 21vh;
+    height: 30vh;
     background-color: #1E1B23;
     border-top: 1px solid #9178b9;
     color: #845EC2;
@@ -27,4 +27,15 @@ footer {
     margin-bottom: 5px;
     margin-top: 16px;
     font-size: 12px;
+}
+
+
+@media all and (max-width: 700px) {
+    footer {
+        height: 40vh;
+    }
+
+    .footer__heading {
+        margin-top: 10px;
+    }
 }

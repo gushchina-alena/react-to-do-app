@@ -1,7 +1,7 @@
 .tasks {
     width: 100%;
-    height: 90vh;
-    background-color: #ffffff;
+    height: 100%;
+    background-color: #fff;
     border-top: 1px solid #afafaf;
 }
 
@@ -9,7 +9,8 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding-top: 12vh;
+    padding-top: 6vh;
+    padding-bottom: 6vh;
 }
 
 .tasks img {
@@ -29,4 +30,75 @@
     margin-left: 84px;
     color: #1E1B23;
     background-color: #FBEAFF;
+}
+
+@media all and (max-width: 1447px) {
+    .tasks-guest__text h1 {
+        font-size: 44px;
+    }
+
+    .tasks-guest__button {
+        margin-left: 15px;
+    }
+
+    .tasks img {
+        height: 480px;
+    }
+}
+
+@media all and (max-width: 1200px) {
+    .tasks-guest__text h1 {
+        font-size: 40px;
+    }
+
+    .tasks img {
+        height: 400px;
+    }
+}
+
+@media all and (max-width: 900px) {
+    .tasks-guest__text h1 {
+        font-size: 34px;
+        text-align: center;
+    }
+
+    .tasks img {
+        height: 340px;
+        margin-bottom: 20px;
+    }
+
+    .tasks-guest {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .tasks-guest {
+        flex-direction: column-reverse;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .tasks-guest__text {
+        width: 60%;
+    }
+
+    .tasks-guest__button {
+        margin-bottom: 20px;
+    }
+}
+
+@media all and (max-width: 550px) {
+    .tasks img {
+        height: 280px;
+    }
+}
+
+@media all and (max-width: 420px) {
+    .tasks img {
+        height: 230px;
+    }
+
+    .tasks-guest__button {
+        margin-left: 30px;
+    }
 }

@@ -10,7 +10,6 @@ const Navbar = () => {
 
     const signinSignout = () => {
         if (isAuth) {
-            localStorage.removeItem('isAuth');
             setIsAuth(false);
             history.push('/start')
         } else {

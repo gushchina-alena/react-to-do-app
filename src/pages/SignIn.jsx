@@ -78,7 +78,7 @@ const SignIn = () => {
                         placeholder="Enter the password" />
                     {passwordErr && <div style={{color: 'red'}}>{passwordErr}</div>}
                 </div>
-                <button className="button" type="submit">Sign In</button>
+                <button className="button signin-btn" type="submit">Sign In</button>
             </form>
         </div>
     )
