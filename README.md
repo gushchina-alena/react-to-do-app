@@ -1,6 +1,10 @@
 To Do React App: 
-- React Hooks 
-- react-router
+- React Hooks
+- React Router v5
 - Flexbox
+- Media Queries
 
-![image](https://user-images.githubusercontent.com/77553973/147388057-239d1f28-db77-4415-b833-aedd4a747be1.png)
+Login: "admin",
+password: "admin"
+
+![image](https://user-images.githubusercontent.com/77553973/167018325-024e14e7-e86f-4764-aba3-d85a9506676d.png)
