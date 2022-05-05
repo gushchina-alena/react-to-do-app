@@ -36,20 +36,16 @@ const ToDo = () => {
             <section className='todo-list'>
                 <h1>Tasks to complete ({tasks.length})</h1>
                 <TaskForm addTask={addTask} />
-                {/* <ReactScrollableFeed> */}
-                {tasks.reverse().map((task) => {
+                {tasks.map((task) => {
                     return (
-                        
                         <TaskList
                             task={task}
                             key={task.id}
                             deleteTask={deleteTask}
                             isDone={isDone}
                         />
-                        
                     )
                 })}
-                {/* </ReactScrollableFeed> */}
             </section>
         </>
     )

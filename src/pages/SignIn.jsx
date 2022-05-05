@@ -52,7 +52,11 @@ const SignIn = () => {
             }
     }
 
-
+    const handleKeypress = (e) => {
+        if (e.keyCode === 13) {
+            onSubmit();
+        }
+    }
     
     return (
         <div className="form-container">
@@ -68,7 +72,6 @@ const SignIn = () => {
                         {emailErr && <div style={{color: 'red'}}>{emailErr}</div>}
                     
                 </div>
-
                 <div className="form__input-block input-block">
                     <label className="input-block__label">Password</label>
                     <input value={password}
@@ -78,7 +81,7 @@ const SignIn = () => {
                         placeholder="Enter the password" />
                     {passwordErr && <div style={{color: 'red'}}>{passwordErr}</div>}
                 </div>
-                <button className="button signin-btn" type="submit">Sign In</button>
+                <button className="button signin-btn" type="submit" onKeyPress={handleKeypress}>Sign In</button>
             </form>
         </div>
     )

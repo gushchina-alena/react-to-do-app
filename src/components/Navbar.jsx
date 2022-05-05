@@ -34,7 +34,7 @@ const Navbar = () => {
                     <li className="header__nav__link">
                         <Link className="header__nav__link" to="/protected">Tasks</Link>
                     </li>
-                    <button className='button' onClick={signinSignout}>{isAuth ? 'Sign Out' : 'Sign In'}</button>
+                    <button className='button header__nav__button' onClick={signinSignout}>{isAuth ? 'Sign Out' : 'Sign In'}</button>
                 </nav>
             </header>
         </>

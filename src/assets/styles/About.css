@@ -59,4 +59,8 @@
     .about__header {
         font-size: 30px;
     }
+
+    .about__text {
+        width: 85%;
+    }
 }

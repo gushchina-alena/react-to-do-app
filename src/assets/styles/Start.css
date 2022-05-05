@@ -32,13 +32,17 @@
     background-color: #FBEAFF;
 }
 
+.tasks-guest__button:hover {
+    background-color: #f6d3ff;
+}
+
 @media all and (max-width: 1447px) {
     .tasks-guest__text h1 {
         font-size: 44px;
     }
 
     .tasks-guest__button {
-        margin-left: 15px;
+        margin-left: 14px;
     }
 
     .tasks img {
@@ -58,18 +62,18 @@
 
 @media all and (max-width: 900px) {
     .tasks-guest__text h1 {
-        font-size: 34px;
-        text-align: center;
+        margin-left: 10px;
+        width: 84%;
     }
 
     .tasks img {
-        height: 340px;
+        height: 440px;
         margin-bottom: 20px;
     }
 
     .tasks-guest {
-        padding-top: 30px;
-        padding-bottom: 30px;
+        padding-top: 40px;
+        padding-bottom: 40px;
     }
 
     .tasks-guest {
@@ -79,7 +83,7 @@
     }
 
     .tasks-guest__text {
-        width: 60%;
+        width: 80%;
     }
 
     .tasks-guest__button {
@@ -87,9 +91,25 @@
     }
 }
 
-@media all and (max-width: 550px) {
+@media all and (max-width: 700px) {
+    .tasks img {
+        height: 380px;
+    }
+}
+
+@media all and (max-width: 600px) {
+    .tasks img {
+        height: 320px;
+    }
+}
+
+@media all and (max-width: 500px) {
     .tasks img {
         height: 280px;
+    }
+
+    .tasks-guest__text h1 {
+        font-size: 36px;
     }
 }
 
@@ -100,5 +120,9 @@
 
     .tasks-guest__button {
         margin-left: 30px;
+    }
+
+    .tasks-guest__text h1 {
+        font-size: 32px;
     }
 }

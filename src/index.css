@@ -21,8 +21,12 @@
   font-weight: 700;
   background-color: #845EC2;
   border-radius: 10px;
-  padding: 10px 56px;
+  padding: 8px 35px;
   cursor: pointer;
+}
+
+.button:hover {
+  background-color: #6b4d9d;
 }
 
 @media all and (max-width: 700px) {
